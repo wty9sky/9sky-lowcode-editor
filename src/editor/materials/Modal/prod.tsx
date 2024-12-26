@@ -7,7 +7,7 @@ export interface ModalRef {
     close: () => void
 }
 
-const Modal: React.ForwardRefRenderFunction<ModalRef, CommonComponentProps> = ({ children, title, onOk, onCancel, styles }, ref) => {
+const Modal: React.ForwardRefRenderFunction<ModalRef, Omit<CommonComponentProps,"ref">> = ({ children, title, onOk, onCancel, styles }, ref) => {
 
   const [open, setOpen] = useState(false);
 
